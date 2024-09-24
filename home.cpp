@@ -32,6 +32,7 @@ void title() // This will show the title on the top
     cout << "\t\t-----------------------------------------------\n\n";
     return;
 }
+
 // This fun() will called after successful login...
 void home(string declCategory, string accNum);
 // This function will check the login credentials...
@@ -163,6 +164,8 @@ void addAccount(string category) // To add new account
     home(category, accNum);
     return;
 }
+
+
 void accDetails(string category, string accNum)
 { // To see  user detials by user itself
     system("cls");
@@ -295,6 +298,8 @@ void update(string accNum, int option)
     updateAccount(category, accNum);
     return;
 }
+
+
 // Shows user's data for updataion and then this updateAccount() called update()
 void updateAccount(string category, string updateAccNum)
 {
@@ -355,6 +360,8 @@ void updateAccount(string category, string updateAccNum)
     home(category, accNum);
     return;
 }
+
+
 void depositAmount(string category, string depositAccNum) // To deposit Amount
 {
     system("cls");
@@ -440,6 +447,7 @@ void depositAmount(string category, string depositAccNum) // To deposit Amount
     home(category, accNum);
     return;
 }
+
 
 void withdrawalAmount(string category, string withdrawalAccNum) // To withdraw amount
 {
@@ -537,6 +545,8 @@ void withdrawalAmount(string category, string withdrawalAccNum) // To withdraw a
     home(category, accNum);
     return;
 }
+
+
 void balanceInqiry(string category, string inquiryAccNum) // To check  acouont balance
 {
     system("cls");
@@ -582,11 +592,13 @@ void balanceInqiry(string category, string inquiryAccNum) // To check  acouont b
     else
     {
         cout << "\n\n\t\tInvalid account number..." << endl;
+        delay(1000);
     }
-    delay(1500);
     home(category, accNum);
     return;
 }
+
+
 void passStatement(string category, string statAccNum) // To see transactions statement
 {
     system("cls");
@@ -637,6 +649,8 @@ void passStatement(string category, string statAccNum) // To see transactions st
     home(category, accNum);
     return;
 }
+
+
 void deleteAccount(string category, string deleteAccNum) // To delete a user account
 {
     system("cls");
@@ -740,6 +754,8 @@ void deleteAccount(string category, string deleteAccNum) // To delete a user acc
     home(category, accNum);
     return;
 }
+
+
 void adminLogin()
 { // This will called when we choose admin
     system("cls");
@@ -753,6 +769,8 @@ void adminLogin()
     authentication(category, username, password);
     return;
 }
+
+
 void userLogin()
 { // This will called when we choose user
     system("cls");
@@ -779,6 +797,8 @@ void userLogin()
     }
     return;
 }
+
+
 void authentication(string authCategory, string username, string password)
 { // To verify login credentials
     char delimiter = ',';
@@ -815,6 +835,8 @@ void authentication(string authCategory, string username, string password)
     file.close();
     return;
 }
+
+
 int login() // To select type of login either Admin or User
 {
     system("cls");
@@ -836,6 +858,8 @@ int login() // To select type of login either Admin or User
     }
     return 0;
 }
+
+
 void home(string homeCategory, string accNum) // This will be executed after login
 {
     int option = 0;
@@ -952,6 +976,7 @@ void home(string homeCategory, string accNum) // This will be executed after log
     return;
 }
 
+
 int main()
 {
     int session = 0;
@@ -960,9 +985,6 @@ int main()
     flogin.close();
     title();
     category = "";
-    if (!session)
-    {
-        session = login();
-    }
+    session = login();
     return 0;
 }
