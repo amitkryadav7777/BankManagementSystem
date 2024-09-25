@@ -1,4 +1,4 @@
 # BankManagementSystem
 
 Username for admin is : admin
-Password for user is  : 1234
+Password for admin is : 1234
